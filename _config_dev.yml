@@ -1,26 +1,26 @@
 # Site settings
-name: Brittany Chiang
-title: Brittany Chiang | Front End Software Engineer
-description: Design-minded front-end software engineer focused on building beautiful interfaces and experiences
-url: https://bchiang7.github.io/
+name: Govind Raj
+title: Govind Raj | Embedded system Engineer
+description: Design-minded embedded system engineer focused on building and controlling embedded devices.
+url: https://gov466.github.io/
 baseurl: ''
-email: brittany.chiang@gmail.com
-cover: https://bchiang7.github.io/img/og.png
-logo: https://bchiang7.github.io/img/emojis/technologist.png
-resume: https://bchiang7.github.io/resume.pdf
+email: govind.mndy@gmail.com
+cover: https://gov466.github.io/img/og.png
+logo: https://gov466.github.io/img/emojis/technologist.png
+resume: https://gov466.github.io/resume.pdf
 social:
   - title: email
-    url: mailto:brittany.chiang@gmail.com
+    url: mailto:govind.mndy@gmail.com
   - title: twitter
-    url: https://twitter.com/bchiang7
+    url: https://twitter.com/Govindraj3s
   - title: instagram
-    url: https://instagram.com/bchiang7
-  - title: codepen
-    url: http://codepen.io/bchiang7
+    url: https://instagram.com/Govindraj7809
+  - title: youtube
+    url: https://www.youtube.com/channel/UCLrUNAP-yM7PjYVxOGOgB6w/videos?view=57&flow=grid
   - title: github
-    url: https://github.com/bchiang7
+    url: https://github.com/gov466
   - title: linkedin
-    url: https://www.linkedin.com/in/bchiang7
+    url: https://www.linkedin.com/in/govind-raj-4b80b9135/
 
 # Build settings
 markdown: kramdown
