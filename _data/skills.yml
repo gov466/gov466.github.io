@@ -7,15 +7,7 @@ MCU:
   - item: ARM
   - item: PIC microcontroller
   - item: AVR
-  - item: ARM 
-#frameworks:
-# - item: Ember & Glimmer
-# - item: React
- # - item: Jekyll
-#  - item: Node
-#  - item: D3
- # - item: Wordpress
-#  - item: Timber  
+  - item: ARM  
 
 tools:
   - item: Git & Github
