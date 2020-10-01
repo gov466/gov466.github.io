@@ -2,8 +2,12 @@ languages:
   - item: Embedded C
   - item: C ++
   - item: Python
-  
 
+MCU:
+  - item: ARM
+  - item: PIC microcontroller
+  - item: AVR
+  - item: ARM 
 #frameworks:
 # - item: Ember & Glimmer
 # - item: React
