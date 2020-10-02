@@ -3,7 +3,7 @@
   code: https://github.com/gov466/Capstone-project
   description: Capstone project done during final semester of my two year post graduate diploma in embedded system engineering design course.
   used:
-    - thing: Embedded C
+     - thing: Embedded C
     
 
 - name: Adaptive method for hand gesture recoginition
@@ -11,14 +11,15 @@
   code: https://github.com/gov466/gov466.github.io/blob/master/govind%20report1(1).pdf
   description: A vision based hand gesture recognition system, the technology used bare hand to extract data for recognition. With the help of this technology user can directly interact with the system.
   used:
-   - thing: MPLAB ide
-   - thing: MATLAB
+    - thing: MPLAB ide
+    - thing: MATLAB
   
 
 - name: Gesture based driving system
   url: https://github.com/gov466/gov466.github.io/blob/master/gstr%20based%20drivng%20ppt(1).pdf
   code: https://github.com/gov466/gov466.github.io/blob/master/gstr%20based%20drivng%20ppt(1).pdf
   description: Mini project for my electronics and communication course at Mahatma gandhi university. Developed an accelerometer based gesture controlled driving system with PIC16F877A microcontroller.
+  used:
     - thing: MPLAB ide
     
 
