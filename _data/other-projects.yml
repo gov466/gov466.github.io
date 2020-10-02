@@ -1,9 +1,10 @@
-- name: Vehicle Speed Detection Using IOT
+- name: Vehicle Speed Detection Using IOThttps://github.com/gov466/gov466.github.io/security
   url: https://github.com/gov466/Capstone-project
   code: https://github.com/gov466/Capstone-project
   description: Capstone project done during final semester of my two year post graduate diploma in embedded system engineering design course.
   used:
      - thing: Embedded C
+     - thing: Beaglebone black
     
 
 - name: Adaptive method for hand gesture recoginition
@@ -13,6 +14,8 @@
   used:
     - thing: MPLAB ide
     - thing: MATLAB
+    - thing: PIC microcontroller
+    - thing: GUI
   
 
 - name: Gesture based driving system
@@ -21,6 +24,7 @@
   description: Mini project for my electronics and communication course at Mahatma gandhi university. Developed an accelerometer based gesture controlled driving system with PIC16F877A microcontroller.
   used:
     - thing: MPLAB ide
+    - thing: PIC microcontroller
     
 
 
