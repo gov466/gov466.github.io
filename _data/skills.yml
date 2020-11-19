@@ -18,4 +18,5 @@ tools:
 design:
   - item: PCB designing
   - item: Tkinter
+  - item: Soldering
   
