@@ -13,6 +13,10 @@ Tools:
   - item: Git & Github
   - item: Linux
   - item: Cross-toolchain
+  - item: EasyEDA
+ 
+Cloud:
+  - item: Thingspeak
   
 Design:
   - item: PCB designing
