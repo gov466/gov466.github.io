@@ -13,9 +13,7 @@ Tools:
   - item: Git & Github
   - item: Linux
   - item: Cross-toolchain
-  - item: EasyEDA
   
-
 Design:
   - item: PCB designing
   - item: Tkinter
