@@ -5,6 +5,9 @@
   used:
      - thing: Embedded C
      - thing: Beaglebone black
+     - thing: Arduino
+     - thing: ESP8266 NodeMCU
+     - thing: Thingspeak
     
 
 - name: Adaptive method for hand gesture recoginition
