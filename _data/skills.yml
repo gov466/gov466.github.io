@@ -1,4 +1,4 @@
-Languages:
+languages:
   - item: Embedded C
   - item: C ++
   - item: Python
@@ -9,7 +9,7 @@ MCU:
   - item: AVR
   - item: ARM  
 
-Tools:
+tools:
   - item: Git & Github
   - item: Linux
   - item: Cross-toolchain
@@ -18,7 +18,7 @@ Tools:
 Cloud:
   - item: Thingspeak
   
-Design:
+design:
   - item: PCB designing
   - item: Tkinter
   - item: Soldering
