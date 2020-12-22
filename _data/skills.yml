@@ -15,8 +15,6 @@ Tools:
   - item: Cross-toolchain
   - item: EasyEDA
   
-Cloud:
-  - item: Thingspeak
 
 Design:
   - item: PCB designing
