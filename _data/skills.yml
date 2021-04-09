@@ -2,6 +2,7 @@ languages:
   - item: Embedded C
   - item: C ++
   - item: Python
+  - item: Java
 
 MCU:
   - item: ARM
