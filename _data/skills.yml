@@ -23,6 +23,10 @@ Software testing:
   - item: IDE- Eclipse
   - item: Project Management tool- Jira
 
+ 
+Cloud:
+  - item: Thingspeak
+  
 design:
   - item: PCB designing
   - item: Tkinter
