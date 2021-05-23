@@ -15,8 +15,13 @@ tools:
   - item: Linux
   - item: Cross-toolchain
   - item: EasyEDA
-  - item: Selenium
-  - item: TestNG
+  
+Software testing:
+  - item: Automation , Manual
+  - item: FrameWorks- Selenium, BDD(Cucumber), TestNG
+  - item:Build Tools- Maven
+  - item: IDE- Eclipse
+  - item: Project Management tool- Jira
   
   
  
