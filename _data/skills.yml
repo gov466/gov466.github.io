@@ -19,7 +19,7 @@ tools:
 Software testing:
   - item: Automation , Manual
   - item: FrameWorks- Selenium, BDD(Cucumber), TestNG
-  - item:Build Tools- Maven
+  - item: Build Tools- Maven
   - item: IDE- Eclipse
   - item: Project Management tool- Jira
   
