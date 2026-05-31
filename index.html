@@ -399,6 +399,34 @@
     }
     .project-link:hover { text-decoration: underline; }
 
+    .proj-sub-label {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-bottom: 1.25rem;
+      margin-top: -1rem;
+      font-style: italic;
+    }
+    .project-card--pro {
+      border-top: 2px solid var(--border);
+    }
+    .proj-company-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 6px;
+    }
+    .coral-tag { background: var(--coral-light); color: var(--coral); }
+    .teal-tag  { background: var(--teal-light);  color: var(--teal);  }
+    .acad-num  { color: var(--purple); opacity: 0.3; }
+    .project-tag--acad {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
     /* ── CERTS ── */
     .certs-grid {
       display: grid;
@@ -669,57 +697,112 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROFESSIONAL PROJECTS -->
   <section id="projects">
     <div class="container">
-      <div class="section-label"><h2>Projects</h2><div class="accent-line"></div></div>
+      <div class="section-label"><h2>Professional Projects</h2><div class="accent-line"></div></div>
+      <p class="proj-sub-label">Real-world impact delivered during work experience</p>
       <div class="projects-grid">
-        <a class="project-card" href="https://github.com/gov466/Capstone-project" target="_blank" rel="noopener">
+
+        <div class="project-card project-card--pro" style="cursor:default;">
+          <div class="proj-company-tag coral-tag">Exact Technology Corp</div>
           <div class="project-num">01</div>
-          <div class="project-title">Vehicle Speed Detection Using IoT</div>
-          <div class="project-desc">Capstone project — built a real-time IoT system to detect and report vehicle speeds using embedded hardware, cloud connectivity, and sensor fusion.</div>
-          <div class="project-tags">
-            <span class="project-tag">Embedded C</span>
-            <span class="project-tag">BeagleBone</span>
-            <span class="project-tag">ESP8266</span>
-            <span class="project-tag">ThingSpeak</span>
-            <span class="project-tag">Arduino</span>
-          </div>
-          <span class="project-link">View on GitHub →</span>
-        </a>
-        <a class="project-card" href="https://github.com/gov466/gov466.github.io/blob/master/govind%20report1(1).pdf" target="_blank" rel="noopener">
-          <div class="project-num">02</div>
-          <div class="project-title">Hand Gesture Recognition System</div>
-          <div class="project-desc">Vision-based system enabling bare-hand gesture input for direct computer interaction, using image processing and PIC microcontroller-driven logic.</div>
-          <div class="project-tags">
-            <span class="project-tag">PIC MCU</span>
-            <span class="project-tag">MATLAB</span>
-            <span class="project-tag">MPLAB IDE</span>
-            <span class="project-tag">GUI</span>
-          </div>
-          <span class="project-link">View Report →</span>
-        </a>
-        <a class="project-card" href="https://github.com/gov466/gov466.github.io/blob/master/gstr%20based%20drivng%20ppt(1).pdf" target="_blank" rel="noopener">
-          <div class="project-num">03</div>
-          <div class="project-title">Gesture-Based Driving System</div>
-          <div class="project-desc">Accelerometer-based gesture-controlled driving system built with PIC16F877A, translating physical tilt and motion into vehicle control signals.</div>
-          <div class="project-tags">
-            <span class="project-tag">PIC16F877A</span>
-            <span class="project-tag">Accelerometer</span>
-            <span class="project-tag">MPLAB IDE</span>
-          </div>
-          <span class="project-link">View Slides →</span>
-        </a>
-        <div class="project-card" style="cursor: default;">
-          <div class="project-num">04</div>
           <div class="project-title">Automated QA Testing Pipeline</div>
-          <div class="project-desc">Converted manual QA workflows into automated Python/Selenium scripts, dramatically reducing validation time and scaling test coverage across large product volumes.</div>
+          <div class="project-desc">Converted manual test processes into automated scripts, significantly cutting validation time and scaling test coverage across large product volumes.</div>
           <div class="project-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">Selenium</span>
             <span class="project-tag">Shell Scripting</span>
+            <span class="project-tag">Regression Testing</span>
           </div>
         </div>
+
+        <div class="project-card project-card--pro" style="cursor:default;">
+          <div class="proj-company-tag coral-tag">Exact Technology Corp</div>
+          <div class="project-num">02</div>
+          <div class="project-title">Equipment Calibration System</div>
+          <div class="project-desc">Designed and implemented a calibration system to ensure instrument accuracy and traceability across the QA lab, improving measurement reliability and audit readiness.</div>
+          <div class="project-tags">
+            <span class="project-tag">QA Systems</span>
+            <span class="project-tag">ISO Compliance</span>
+            <span class="project-tag">Documentation</span>
+          </div>
+        </div>
+
+        <div class="project-card project-card--pro" style="cursor:default;">
+          <div class="proj-company-tag teal-tag">Crystal Fountains</div>
+          <div class="project-num">03</div>
+          <div class="project-title">RMA Process Optimization</div>
+          <div class="project-desc">Streamlined the RMA workflow by introducing updated testing procedures, reducing processing times and improving accuracy in defect identification and reporting.</div>
+          <div class="project-tags">
+            <span class="project-tag">PCBA Testing</span>
+            <span class="project-tag">Failure Analysis</span>
+            <span class="project-tag">Process Improvement</span>
+          </div>
+        </div>
+
+        <div class="project-card project-card--pro" style="cursor:default;">
+          <div class="proj-company-tag teal-tag">Crystal Fountains</div>
+          <div class="project-num">04</div>
+          <div class="project-title">5S Lab Transformation</div>
+          <div class="project-desc">Led a full 5S lean implementation across the QA lab — reorganized testing areas, reduced equipment retrieval time, and established SOPs that improved team productivity and audit performance.</div>
+          <div class="project-tags">
+            <span class="project-tag">Lean / 5S</span>
+            <span class="project-tag">SOP Development</span>
+            <span class="project-tag">Six Sigma</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC PROJECTS -->
+  <section id="academic-projects">
+    <div class="container">
+      <div class="section-label"><h2>Academic Projects</h2><div class="accent-line" style="background: linear-gradient(to right, var(--purple), transparent);"></div></div>
+      <p class="proj-sub-label">Built during studies in Embedded Systems Engineering Design</p>
+      <div class="projects-grid">
+
+        <a class="project-card" href="https://github.com/gov466/Capstone-project" target="_blank" rel="noopener">
+          <div class="project-num acad-num">01</div>
+          <div class="project-title">Vehicle Speed Detection Using IoT</div>
+          <div class="project-desc">Capstone project — built a real-time IoT system to detect and report vehicle speeds using embedded hardware, cloud connectivity, and sensor fusion.</div>
+          <div class="project-tags">
+            <span class="project-tag project-tag--acad">Embedded C</span>
+            <span class="project-tag project-tag--acad">BeagleBone</span>
+            <span class="project-tag project-tag--acad">ESP8266</span>
+            <span class="project-tag project-tag--acad">ThingSpeak</span>
+            <span class="project-tag project-tag--acad">Arduino</span>
+          </div>
+          <span class="project-link">View on GitHub →</span>
+        </a>
+
+        <a class="project-card" href="https://github.com/gov466/gov466.github.io/blob/master/govind%20report1(1).pdf" target="_blank" rel="noopener">
+          <div class="project-num acad-num">02</div>
+          <div class="project-title">Hand Gesture Recognition System</div>
+          <div class="project-desc">Vision-based system enabling bare-hand gesture input for direct computer interaction, using image processing and PIC microcontroller-driven logic.</div>
+          <div class="project-tags">
+            <span class="project-tag project-tag--acad">PIC MCU</span>
+            <span class="project-tag project-tag--acad">MATLAB</span>
+            <span class="project-tag project-tag--acad">MPLAB IDE</span>
+            <span class="project-tag project-tag--acad">GUI</span>
+          </div>
+          <span class="project-link">View Report →</span>
+        </a>
+
+        <a class="project-card" href="https://github.com/gov466/gov466.github.io/blob/master/gstr%20based%20drivng%20ppt(1).pdf" target="_blank" rel="noopener">
+          <div class="project-num acad-num">03</div>
+          <div class="project-title">Gesture-Based Driving System</div>
+          <div class="project-desc">Accelerometer-based gesture-controlled driving system built with PIC16F877A, translating physical tilt and motion into vehicle control signals.</div>
+          <div class="project-tags">
+            <span class="project-tag project-tag--acad">PIC16F877A</span>
+            <span class="project-tag project-tag--acad">Accelerometer</span>
+            <span class="project-tag project-tag--acad">MPLAB IDE</span>
+          </div>
+          <span class="project-link">View Slides →</span>
+        </a>
+
       </div>
     </div>
   </section>
