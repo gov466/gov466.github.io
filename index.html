@@ -440,7 +440,12 @@
       border-radius: 10px;
       border: 0.5px solid var(--border);
       background: var(--surface);
+      text-decoration: none;
+      transition: all 0.15s;
+      cursor: pointer;
     }
+    .cert-item:hover { border-color: var(--coral); box-shadow: 0 2px 8px rgba(216,90,48,0.1); }
+    .cert-item:active { transform: scale(0.98); }
     .cert-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
     .cert-text { font-size: 13px; color: var(--text-secondary); line-height: 1.45; }
 
@@ -891,26 +896,30 @@
     <div class="container">
       <div class="section-label"><h2>Certifications</h2><div class="accent-line"></div></div>
       <div class="certs-grid">
-        <div class="cert-item">
+        <a href="cert_six_sigma.pdf" target="_blank" class="cert-item">
           <span class="cert-icon" style="color: var(--amber);">🏅</span>
           <span class="cert-text">Six Sigma Yellow Belt — Council of Six Sigma Certification</span>
-        </div>
-        <div class="cert-item">
+        </a>
+        <a href="cert_ipc_a610.png" target="_blank" class="cert-item">
           <span class="cert-icon" style="color: var(--teal);">📋</span>
           <span class="cert-text">IPC A-610 Operators Training Program</span>
-        </div>
-        <div class="cert-item">
+        </a>
+        <a href="cert_working_at_heights.pdf" target="_blank" class="cert-item">
           <span class="cert-icon" style="color: var(--coral);">🛡️</span>
           <span class="cert-text">Working at Heights — LIFT Training</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-icon" style="color: var(--purple);">📊</span>
+        </a>
+        <a href="cert_jhsc_part_one.pdf" target="_blank" class="cert-item">
+          <span class="cert-icon" style="color: var(--purple);">⚙️</span>
+          <span class="cert-text">JHSC - Part One — Workplace Safety</span>
+        </a>
+        <a href="cert_quality_management.pdf" target="_blank" class="cert-item">
+          <span class="cert-icon" style="color: var(--teal);">📊</span>
           <span class="cert-text">Quality Management Foundations — LinkedIn Learning</span>
-        </div>
-        <div class="cert-item">
+        </a>
+        <a href="cert_excel_training.pdf" target="_blank" class="cert-item">
           <span class="cert-icon" style="color: var(--teal);">📈</span>
           <span class="cert-text">Excel Essential Training (Microsoft 365) — LinkedIn Learning</span>
-        </div>
+        </a>
       </div>
     </div>
   </section>
