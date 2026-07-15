@@ -561,6 +561,16 @@
       .footer-inner { padding: 0 1.25rem; }
     }
   </style>
+  <!-- ── ANALYTICS ───────────────────────────────────────────────
+       GoatCounter: free, no cookies, no consent banner needed.
+       1. Sign up at https://www.goatcounter.com  (pick a code, e.g. "govindraj")
+       2. Replace MYCODE below with that code.
+       3. Dashboard lives at https://MYCODE.goatcounter.com
+       Delete this block if you'd rather use Cloudflare (see notes).
+  ─────────────────────────────────────────────────────────────── -->
+  <script data-goatcounter="https://MYCODE.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
 </head>
 <body>
 
@@ -993,6 +1003,108 @@
         document.getElementById('toggle-icon').textContent = '☀️';
         document.getElementById('toggle-label').textContent = 'Light';
       }
+    })();
+
+    /* ── Visitor tracking + email alerts ───────────────────────────
+       Sends events to (a) GoatCounter dashboard and (b) your Apps
+       Script endpoint, which emails you. See SETUP.md.
+    ───────────────────────────────────────────────────────────────── */
+    (function () {
+
+      /* ▼▼ FILL THESE IN ▼▼ */
+      var NOTIFY_URL = 'https://script.google.com/macros/s/AKfycbxGnwUAQom0G_oSDHweUknPWyu_J7uRTelvRkq2bo42CTA05msoeKlSmjg6MvVYm8KRlg/exec';
+      var NOTIFY_KEY = 'gr-p0rt-7x2k9';
+      /* ▲▲ leave as-is to disable email alerts ▲▲ */
+
+      // Ignore obvious bots and your own visits (?me=1 once, then remembered)
+      if (/bot|crawl|spider|slurp|preview|headless/i.test(navigator.userAgent)) return;
+      if (navigator.webdriver) return;
+      if (location.search.indexOf('me=1') > -1) localStorage.setItem('skipTrack', '1');
+      var SKIP = localStorage.getItem('skipTrack') === '1';
+
+      // One id per browser tab session, so one visitor != ten emails
+      var sid = sessionStorage.getItem('sid');
+      if (!sid) { sid = Math.random().toString(36).slice(2, 10); sessionStorage.setItem('sid', sid); }
+
+      function context() {
+        var q = new URLSearchParams(location.search);
+        return {
+          key:    NOTIFY_KEY,
+          sid:    sid,
+          page:   location.pathname + location.search,
+          ref:    document.referrer || '(direct)',
+          src:    q.get('utm_source') || q.get('src') || '',
+          tz:     (Intl.DateTimeFormat().resolvedOptions().timeZone || ''),
+          lang:   navigator.language || '',
+          screen: screen.width + 'x' + screen.height,
+          ua:     navigator.userAgent
+        };
+      }
+
+      function track(event, label) {
+        if (SKIP) return;
+
+        // (a) GoatCounter dashboard
+        if (window.goatcounter && window.goatcounter.count && event !== 'pageview') {
+          window.goatcounter.count({ path: event, title: label, event: true });
+        }
+
+        // (b) Email alert
+        if (NOTIFY_URL.indexOf('PASTE') === 0) return;
+        var body = context();
+        body.event = event;
+        body.label = label;
+        try {
+          fetch(NOTIFY_URL, {
+            method:  'POST',
+            mode:    'no-cors',
+            keepalive: true,
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body:    JSON.stringify(body)
+          });
+        } catch (e) { /* never break the page over analytics */ }
+      }
+
+      // 1. Someone landed
+      track('pageview', 'Page opened');
+
+      // 2. Someone clicked something — label each link distinctly
+      function labelFor(a) {
+        var h = a.getAttribute('href') || '';
+        if (/resume\.pdf$/i.test(h))            return ['click-resume',   'RESUME OPENED'];
+        if (/^mailto:/i.test(h))                return ['click-email',    'Email clicked'];
+        if (/linkedin\.com/i.test(h))           return ['click-linkedin', 'LinkedIn clicked'];
+        if (/github\.com\/gov466\/?$/i.test(h)) return ['click-github',   'GitHub profile clicked'];
+        if (/github\.com\/gov466\//i.test(h)) {
+          // A specific project — name it from the card's own heading
+          var t = (a.querySelector('h3, h4, .project-title') || {}).textContent
+                  || h.split('/').pop();
+          t = decodeURIComponent(t).replace(/\.(pdf|md)$/i, '').trim().slice(0, 60);
+          return ['project:' + t, 'Project viewed: ' + t];
+        }
+        if (/^https?:/i.test(h) && h.indexOf(location.hostname) === -1) {
+          return ['outbound:' + (h.split('/')[2] || h), 'Left for ' + (h.split('/')[2] || h)];
+        }
+        return null;
+      }
+
+      document.querySelectorAll('a[href]').forEach(function (a) {
+        var l = labelFor(a);
+        if (!l) return;
+        a.addEventListener('click', function () { track(l[0], l[1]); });
+      });
+
+      // 3. Did they actually read it?
+      var deep = false;
+      window.addEventListener('scroll', function () {
+        if (deep) return;
+        if ((window.scrollY + window.innerHeight) / document.body.scrollHeight > 0.6) {
+          deep = true;
+          track('scroll-60', 'Scrolled 60%');
+        }
+      }, { passive: true });
+
+      setTimeout(function () { track('dwell-30s', 'Stayed 30 seconds'); }, 30000);
     })();
   </script>
 </body>
