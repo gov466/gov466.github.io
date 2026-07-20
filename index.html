@@ -803,34 +803,15 @@
       const html = document.documentElement;
       const isDark = html.getAttribute('data-theme') === 'dark';
       html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      
-      const icon = document.getElementById('toggle-icon');
-      const label = document.getElementById('toggle-label');
-      
-      if (icon) icon.textContent = isDark ? '🌙' : '☀️';
-      if (label) label.textContent = isDark ? 'Dark' : 'Light';
-      
       localStorage.setItem('theme', isDark ? 'light' : 'dark');
     }
 
-    (function() {
+    window.addEventListener('DOMContentLoaded', function() {
       const saved = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', saved);
-      
-      const icon = document.getElementById('toggle-icon');
-      const label = document.getElementById('toggle-label');
-      
-      if (saved === 'dark') {
-        if (icon) icon.textContent = '☀️';
-        if (label) label.textContent = 'Light';
-      }
-    })();
+    });
 
-    /* ── Enhanced visitor tracking + email alerts ───────────────────────
-       Tracks: page views, clicks, scroll depth, time on page, bounce
-    ───────────────────────────────────────────────────────────────────── */
     (function () {
-
       var NOTIFY_URL = 'https://script.google.com/macros/s/AKfycbxhIpCHwuzJAh2byEdl7WOl-s5bWM91_UoVsib1Kz-YGbUDFhTA7QpABE2L8FHVOUQo/exec';
       var NOTIFY_KEY = 'gr-p0rt-7x2k9';
 
@@ -847,15 +828,15 @@
       function context() {
         var q = new URLSearchParams(location.search);
         return {
-          key:    NOTIFY_KEY,
-          sid:    sid,
-          page:   location.pathname + location.search,
-          ref:    document.referrer || '(direct)',
-          src:    q.get('utm_source') || q.get('src') || '',
-          tz:     (Intl.DateTimeFormat().resolvedOptions().timeZone || ''),
-          lang:   navigator.language || '',
+          key: NOTIFY_KEY,
+          sid: sid,
+          page: location.pathname + location.search,
+          ref: document.referrer || '(direct)',
+          src: q.get('utm_source') || q.get('src') || '',
+          tz: (Intl.DateTimeFormat().resolvedOptions().timeZone || ''),
+          lang: navigator.language || '',
           screen: screen.width + 'x' + screen.height,
-          ua:     navigator.userAgent
+          ua: navigator.userAgent
         };
       }
 
@@ -873,11 +854,11 @@
         body.label = label;
         try {
           fetch(NOTIFY_URL, {
-            method:  'POST',
-            mode:    'no-cors',
+            method: 'POST',
+            mode: 'no-cors',
             keepalive: true,
             headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-            body:    JSON.stringify(body)
+            body: JSON.stringify(body)
           });
         } catch (e) { }
       }
@@ -886,10 +867,10 @@
 
       function labelFor(a) {
         var h = a.getAttribute('href') || '';
-        if (/resume\.pdf$/i.test(h))            return ['click-resume',   'RESUME OPENED'];
-        if (/^mailto:/i.test(h))                return ['click-email',    'Email clicked'];
-        if (/linkedin\.com/i.test(h))           return ['click-linkedin', 'LinkedIn clicked'];
-        if (/github\.com\/gov466\/?$/i.test(h)) return ['click-github',   'GitHub profile clicked'];
+        if (/resume\.pdf$/i.test(h)) return ['click-resume', 'RESUME OPENED'];
+        if (/^mailto:/i.test(h)) return ['click-email', 'Email clicked'];
+        if (/linkedin\.com/i.test(h)) return ['click-linkedin', 'LinkedIn clicked'];
+        if (/github\.com\/gov466\/?$/i.test(h)) return ['click-github', 'GitHub profile clicked'];
         if (/github\.com\/gov466\//i.test(h)) {
           var t = (a.querySelector('h3, h4, .project-title') || {}).textContent || h.split('/').pop();
           t = decodeURIComponent(t).replace(/\.(pdf|md)$/i, '').trim().slice(0, 60);
@@ -911,7 +892,6 @@
       window.addEventListener('scroll', function () {
         if (SKIP) return;
         var pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
-        
         if (pct >= 25 && !scrollMarkers[25]) { scrollMarkers[25] = true; track('scroll-25', 'Scrolled 25%'); }
         if (pct >= 50 && !scrollMarkers[50]) { scrollMarkers[50] = true; track('scroll-50', 'Scrolled 50%'); }
         if (pct >= 75 && !scrollMarkers[75]) { scrollMarkers[75] = true; track('scroll-75', 'Scrolled 75%'); }
@@ -929,7 +909,6 @@
           track('bounce', 'Left without interaction');
         }
       });
-
     })();
   </script>
 </body>
