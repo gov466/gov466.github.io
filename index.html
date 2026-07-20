@@ -296,6 +296,7 @@
     /* ── ABOUT ── */
     #about {
       max-width: 640px;
+      margin: 0 auto;
     }
 
     /* ── SKILLS ── */
@@ -835,7 +836,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', function() {
-      const saved = localStorage.getItem('theme') || 'light';
+      const saved = localStorage.getItem('theme') || 'dark';
       document.documentElement.setAttribute('data-theme', saved);
     });
 
