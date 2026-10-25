@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wireless Sensor Test Fixture | Govind Raj</title>
+  <meta name="description" content="Case study: an ESP32 test fixture that checks humidity and temperature probes in under 2 seconds from a phone, replacing a 2–5 minute cellular and cloud workflow." />
+  <link rel="canonical" href="https://gov466.github.io/case-studies/wireless-test-fixture.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23D85A30'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23fff'>GR</text></svg>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Govind Raj" />
+  <meta property="og:url" content="https://gov466.github.io/case-studies/wireless-test-fixture.html" />
+  <meta property="og:title" content="Case study: Wireless Sensor Test Fixture" />
+  <meta property="og:description" content="An ESP32 fixture that checks sensor probes from a phone in under 2 seconds, down from 2–5 minutes." />
+  <meta property="og:image" content="https://gov466.github.io/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <script>
+    (function () {
+      var t = 'dark';
+      try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/case-study.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">Govind <span>Raj.</span></a>
+      <a href="../#projects" class="nav-back">← All projects</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="cs-tag">Case study · Exact Technology</div>
+    <h1>Wireless Sensor Test Fixture</h1>
+    <p class="cs-lede">A small ESP32 box that checks humidity and temperature probes from any phone in under 2 seconds. It replaced a workflow that took 2–5 minutes and needed five field loggers, a laptop and a cellular connection.</p>
+
+    <dl class="cs-meta">
+      <div><dt>Role</dt><dd>Hardware, firmware and test method</dd></div>
+      <div><dt>Device under test</dt><dd>SHT31 RH/temperature probes</dd></div>
+      <div><dt>Platform</dt><dd>ESP32 · I²C multiplexer</dd></div>
+      <div><dt>Year</dt><dd>2026</dd></div>
+    </dl>
+
+    <section>
+      <h2>The problem</h2>
+      <p>The probes are used in concrete-monitoring loggers. Verifying them meant plugging each probe into a field logger, triggering a cellular upload with a magnetic switch, waiting for the connection, then checking readings across several cloud dashboard tabs.</p>
+      <p>Each check took <strong>2–5 minutes</strong> and needed five loggers and a laptop. Comparing readings by eye to spot a bad probe was slow and easy to get wrong.</p>
+    </section>
+
+    <section>
+      <h2>What I built</h2>
+
+      <h3>1. A self-contained Wi-Fi test bench</h3>
+      <p>An ESP32 runs as its own Wi-Fi access point, with no internet, cellular link or laptop involved. A QR code on the enclosure opens a dashboard on any phone or tablet. The dashboard is served straight from the ESP32's flash memory.</p>
+
+      <h3>2. Several probes read at once</h3>
+      <p>A TCA9548A I²C multiplexer lets one ESP32 read up to five SHT31 probes side by side. The dashboard refreshes every 2 seconds, so technicians just watch the results without tapping anything.</p>
+
+      <h3>3. Two clear failure types</h3>
+      <ul class="cs-list">
+        <li><strong>DISCONNECTED:</strong> no valid reading, which points to a broken wire, a detached cap or a bad connection.</li>
+        <li><strong>FAIL (DRIFTED):</strong> the probe reads, but it's more than <strong>±3.5% RH</strong> away from the batch average. That points to a contaminated sensing layer, and the probe should be scrapped.</li>
+      </ul>
+
+      <h3>4. A way to verify the fixture itself</h3>
+      <p>The bench is checked with a saturated salt (NaCl) chamber, which holds a known <strong>75.3% RH</strong> at room temperature. Readings must fall within <strong>71.8–78.8% RH</strong>, which keeps the fixture's own accuracy traceable.</p>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <div class="cs-results">
+        <div class="cs-result">
+          <div class="cs-result-num">&lt; 2 s</div>
+          <div class="cs-result-label">per check, down from 2–5 minutes</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-num">1 box</div>
+          <div class="cs-result-label">and a phone, instead of 5 loggers, a laptop and 5 browser tabs</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-num">0</div>
+          <div class="cs-result-label">cables, apps or installs needed to start testing</div>
+        </div>
+      </div>
+      <div class="cs-table-wrap">
+        <table class="cs-table">
+          <thead><tr><th></th><th>Before</th><th>After</th></tr></thead>
+          <tbody>
+            <tr><td>Data path</td><td>Cellular upload, then cloud</td><td>Local I²C and Wi-Fi</td></tr>
+            <tr><td>Starting a test</td><td>Manual magnetic switch</td><td>Plug in the probe</td></tr>
+            <tr><td>Time per check</td><td>2–5 minutes</td><td>Under 2 seconds</td></tr>
+            <tr><td>Finding a bad probe</td><td>Compare readings by eye</td><td>Flagged automatically</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tools</h2>
+      <div class="cs-stack">
+        <span>ESP32</span><span>C++ / Arduino</span><span>TCA9548A I²C mux</span><span>Sensirion SHT31</span><span>Embedded web server</span><span>HTML/CSS</span>
+      </div>
+    </section>
+
+    <section class="report-box">
+      <h2>Full technical report</h2>
+      <p>The full specification includes the wiring and pin map, firmware and verification routine. It contains employer details, so it's password-protected.</p>
+      <p class="report-hint">No password? <a href="mailto:govindraj27809@gmail.com?subject=Password%20for%20wireless%20test%20fixture%20report">Email me</a> and I'll send it.</p>
+
+      <form class="report-lock" data-report="wireless-test-fixture" data-title="Wireless Sensor Test Fixture" data-viewer="report-viewer">
+        <label for="report-password">Password</label>
+        <div class="report-row">
+          <input id="report-password" type="password" autocomplete="off" spellcheck="false" />
+          <button class="btn" type="submit">Open report</button>
+        </div>
+        <div class="report-status" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="report-viewer" id="report-viewer" hidden>
+        <div class="report-actions">
+          <a class="btn report-open" target="_blank" rel="noopener">Open in new tab</a>
+          <a class="btn btn-secondary report-download">Download PDF</a>
+        </div>
+        <iframe title="Wireless Sensor Test Fixture report"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="../">Govind Raj</a> · Hardware Quality &amp; Embedded Systems Engineer · Toronto
+  </footer>
+
+  <script src="../assets/report-unlock.js"></script>
+  <script src="../assets/track.js"></script>
+</body>
+</html>

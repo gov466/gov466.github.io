@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calibration &amp; Tool Management System | Govind Raj</title>
+  <meta name="description" content="Case study: replacing paper and spreadsheet calibration tracking with a mobile, automated quality system that locks failed equipment, warns before due dates and makes audits a one-click export." />
+  <link rel="canonical" href="https://gov466.github.io/case-studies/calibration-system.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23D85A30'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23fff'>GR</text></svg>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Govind Raj" />
+  <meta property="og:url" content="https://gov466.github.io/case-studies/calibration-system.html" />
+  <meta property="og:title" content="Case study: Calibration &amp; Tool Management System" />
+  <meta property="og:description" content="Paper and spreadsheet calibration tracking replaced with a mobile, automated quality system. About 3–4 hours saved per audit cycle." />
+  <meta property="og:image" content="https://gov466.github.io/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <script>
+    (function () {
+      var t = 'dark';
+      try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/case-study.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">Govind <span>Raj.</span></a>
+      <a href="../#projects" class="nav-back">← All projects</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="cs-tag">Case study · Exact Technology</div>
+    <h1>Calibration &amp; Tool Management System</h1>
+    <p class="cs-lede">I replaced paper grids and spreadsheet logs for equipment calibration with a mobile app and automated checks. Failed tools now lock themselves, due dates warn people ahead of time, and audit prep takes one click.</p>
+
+    <dl class="cs-meta">
+      <div><dt>Role</dt><dd>Designed and built it end to end</dd></div>
+      <div><dt>Setting</dt><dd>Electronics QA lab</dd></div>
+      <div><dt>Standard</dt><dd>ISO 9001 traceability</dd></div>
+      <div><dt>Stack</dt><dd>AppSheet · Apps Script</dd></div>
+    </dl>
+
+    <section>
+      <h2>The problem</h2>
+      <p>Calibration and preventive-maintenance records for the lab's instruments and test fixtures lived on paper grids and in separate spreadsheets. No one could see at a glance which tools were due, overdue, or failed. That gap is how out-of-calibration equipment ends up back on the production floor.</p>
+      <p>Audit preparation meant collecting records by hand from several places, which took hours every cycle.</p>
+    </section>
+
+    <section>
+      <h2>What I built</h2>
+
+      <h3>1. One source of truth for every tool</h3>
+      <p>A relational data model with a master inventory: each asset has an ID, a location and a lifecycle state (<strong>Active</strong>, <strong>In Calibration</strong>, <strong>Expired</strong> or <strong>Out of Service</strong>). Separate tables hold calibration measurements and routine inspection records, so the history never overlaps or gets overwritten.</p>
+
+      <h3>2. A mobile app for the shop floor</h3>
+      <p>Technicians use a phone-friendly app with four workflows:</p>
+      <ul class="cs-list">
+        <li><strong>External calibration certificates:</strong> log certificates from accredited labs for reference standards such as DMMs and calibrators, and reset due dates.</li>
+        <li><strong>Inventory lookup:</strong> search any tool by ID, status or location.</li>
+        <li><strong>Monthly PM checklist:</strong> visual and mechanical checks.</li>
+        <li><strong>Internal verification:</strong> log live readings against reference values.</li>
+      </ul>
+
+      <h3>3. Procedures turned into enforced checks</h3>
+      <p>Instead of written SOPs that rely on judgment, the forms do the checking:</p>
+      <ul class="cs-list">
+        <li><strong>Precision tolerances calculated in the form.</strong> Reference resistors in functional test fixtures are checked against ±0.05% windows. Low-ohm parts require 4-wire measurement.</li>
+        <li><strong>Mechanical checks on bed-of-nails fixtures:</strong> pogo-pin return, board alignment and fastener condition. These catch worn hardware before it causes drift.</li>
+      </ul>
+
+      <h3>4. Automation that acts without being asked</h3>
+      <ul class="cs-list">
+        <li><strong>Fail-safe lockout.</strong> An out-of-tolerance reading sets the tool to a locked status straight away and alerts the engineering lead with the details.</li>
+        <li><strong>Nightly due-date scan.</strong> A Google Apps Script job checks every record at midnight. It warns <strong>30 days</strong> ahead of external calibrations and <strong>7 days</strong> ahead of internal PM.</li>
+        <li><strong>Records open in the browser.</strong> Verification sheets link straight to Google Drive, so technicians always see the current version without downloading files.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <div class="cs-results">
+        <div class="cs-result">
+          <div class="cs-result-num">3–4 hrs</div>
+          <div class="cs-result-label">saved per audit cycle (estimated)</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-num">1 click</div>
+          <div class="cs-result-label">to compile audit history, down from hours of manual collection</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-num">30 / 7 days</div>
+          <div class="cs-result-label">warning before external calibration and internal PM due dates</div>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem">Maintenance moved from reacting to failures to planning ahead. Every measurement now traces back to an accredited reference.</p>
+    </section>
+
+    <section>
+      <h2>Tools</h2>
+      <div class="cs-stack">
+        <span>AppSheet</span><span>Google Sheets</span><span>Google Apps Script</span><span>JavaScript</span><span>Gmail notifications</span><span>Slack webhooks</span><span>ISO 9001</span>
+      </div>
+    </section>
+
+    <section class="report-box">
+      <h2>Full technical report</h2>
+      <p>The full report includes the data schema, tolerance tables and automation logic. It contains employer details, so it's password-protected.</p>
+      <p class="report-hint">No password? <a href="mailto:govindraj27809@gmail.com?subject=Password%20for%20calibration%20system%20report">Email me</a> and I'll send it.</p>
+
+      <form class="report-lock" data-report="calibration-system" data-title="Calibration & Tool Management System" data-viewer="report-viewer">
+        <label for="report-password">Password</label>
+        <div class="report-row">
+          <input id="report-password" type="password" autocomplete="off" spellcheck="false" />
+          <button class="btn" type="submit">Open report</button>
+        </div>
+        <div class="report-status" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="report-viewer" id="report-viewer" hidden>
+        <div class="report-actions">
+          <a class="btn report-open" target="_blank" rel="noopener">Open in new tab</a>
+          <a class="btn btn-secondary report-download">Download PDF</a>
+        </div>
+        <iframe title="Calibration & Tool Management System report"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="../">Govind Raj</a> · Hardware Quality &amp; Embedded Systems Engineer · Toronto
+  </footer>
+
+  <script src="../assets/report-unlock.js"></script>
+  <script src="../assets/track.js"></script>
+</body>
+</html>

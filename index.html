@@ -860,15 +860,18 @@
             </div>
             <div class="exp-meta">Mar 2025 – Present &nbsp;·&nbsp; Toronto, ON</div>
             <ul class="exp-bullets" style="--blt: var(--coral);">
-              <li>Execute release and regression testing for engineering builds, validating hardware-software integration prior to production.</li>
-              <li>Perform root cause analysis and failure triage on complex system issues in collaboration with firmware and BIOS teams.</li>
-              <li>Partner with cross-functional teams to ensure issue resolution aligns with system performance and reliability goals.</li>
+              <li>Own testing for hardware validation programs end to end: execution, data analysis, and communication with firmware, BIOS and engineering teams.</li>
+              <li>Install, commission and verify test setups and equipment, and troubleshoot setup issues as they come up.</li>
+              <li>Lead root cause analysis and CAPA on complex system issues, feeding findings into engineering reviews.</li>
+              <li>Maintain audit-ready test records with full traceability.</li>
             </ul>
             <div class="exp-achieve" style="--ab: var(--coral-light); --ac: var(--coral);">
               <div class="exp-achieve-label">Key achievements</div>
               <ul class="exp-bullets" style="--blt: var(--coral);">
-                <li>Automated manual regression testing with Python and Selenium, cutting validation cycle time by <strong>~40%</strong> across batches of 100+ hardware builds.</li>
-                <li>Built a calibration lifecycle tracking system in Google Apps Script with automated schedules and email alerts, saving an estimated <strong>3–4 hours per audit cycle</strong>.</li>
+                <li>Cut validation cycle time by <strong>~40%</strong> across batches of 100+ builds with Python/Selenium regression automation.</li>
+                <li>Built a wireless sensor test fixture that cut probe checks from 2–5 minutes to <strong>under 2 seconds</strong>.</li>
+                <li>Built a calibration tracking system saving an estimated <strong>3–4 hours per audit cycle</strong>.</li>
+                <li>Built an AI agent that flags likely-duplicate Jira defects by root cause.</li>
                 <li>Relaunched the Health &amp; Safety Committee as an active member.</li>
               </ul>
             </div>
@@ -888,16 +891,16 @@
             </div>
             <div class="exp-meta">Nov 2021 – Mar 2025 &nbsp;·&nbsp; Vaughan, ON</div>
             <ul class="exp-bullets" style="--blt: var(--teal);">
-              <li>Conducted end-to-end validation and debug of PCBA assemblies and control systems for embedded electronics.</li>
-              <li>Managed non-conformances through detailed failure analysis and defect categorization to isolate firmware and UI issues.</li>
-              <li>Maintained comprehensive quality records and FA reports ensuring full traceability and ISO 9001 compliance.</li>
-              <li>Led 5S implementation and lean optimization of QA lab operations.</li>
+              <li>Validated and debugged PCBA assemblies, embedded and control systems against quality and functional specifications.</li>
+              <li>Investigated non-conformances through failure analysis and defect categorization to isolate firmware and hardware root causes.</li>
+              <li>Maintained lab instrumentation (oscilloscopes, thermal analyzers, power supplies) and set up equipment calibration protocols.</li>
+              <li>Kept failure analysis reports and audit records for full ISO 9001 traceability.</li>
             </ul>
             <div class="exp-achieve" style="--ab: var(--teal-light); --ac: var(--teal);">
               <div class="exp-achieve-label">Key achievements</div>
               <ul class="exp-bullets" style="--blt: var(--teal);">
-                <li>Redesigned the RMA intake and testing workflow with standardized defect categories and quality gates, cutting average processing time by <strong>~25%</strong>.</li>
-                <li>Led 5S across 3 QA lab zones, reducing equipment retrieval time by <strong>~30%</strong> and establishing SOPs that improved audit readiness.</li>
+                <li>Cut average RMA processing time by <strong>~25%</strong> with a redesigned intake and testing workflow.</li>
+                <li>Reduced equipment retrieval time by <strong>~30%</strong> by leading 5S across 3 QA lab zones.</li>
               </ul>
             </div>
           </div>
@@ -934,70 +937,82 @@
       <p class="proj-sub-label">Real-world impact delivered during work experience</p>
       <div class="projects-grid">
 
-        <div class="project-card project-card--pro" style="cursor:default;">
+        <div class="project-card project-card--pro">
           <div class="proj-company-tag coral-tag">Exact Technology Corp</div>
           <div class="project-num">01</div>
-          <div class="project-title">Automated QA Testing Pipeline</div>
-          <div class="project-desc">Automated manual regression testing with Python and Selenium, cutting validation cycle time by ~40% across batches of 100+ hardware builds.</div>
+          <div class="project-title">AI-Powered Jira Deduplicator</div>
+          <div class="project-desc">An AI agent that reads each new defect and flags likely duplicates by reasoning about root cause, not shared keywords. It only suggests matches, with a confidence level; a person always makes the call.</div>
+          <div class="project-tags">
+            <span class="project-tag">Claude API</span>
+            <span class="project-tag">Jira REST API</span>
+            <span class="project-tag">Apps Script</span>
+            <span class="project-tag">AI Agent</span>
+          </div>
+          <a href="Bug_Deduplicator_Report.pdf" target="_blank" rel="noopener" class="project-link">One-page overview →</a>
+          <a href="https://github.com/gov466/jira-deduplicator" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </div>
+
+        <div class="project-card project-card--pro">
+          <div class="proj-company-tag coral-tag">Exact Technology Corp</div>
+          <div class="project-num">02</div>
+          <div class="project-title">Wireless Sensor Test Fixture</div>
+          <div class="project-desc">An ESP32 box that reads up to five humidity probes at once and serves a live pass/fail dashboard to any phone through a QR code. Checks went from 2–5 minutes to under 2 seconds.</div>
+          <div class="project-tags">
+            <span class="project-tag">ESP32</span>
+            <span class="project-tag">C++</span>
+            <span class="project-tag">I²C</span>
+            <span class="project-tag">Test Fixtures</span>
+          </div>
+          <a href="case-studies/wireless-test-fixture.html" class="project-link">Read case study →</a>
+        </div>
+
+        <div class="project-card project-card--pro">
+          <div class="proj-company-tag coral-tag">Exact Technology Corp</div>
+          <div class="project-num">03</div>
+          <div class="project-title">Calibration &amp; Tool Management System</div>
+          <div class="project-desc">A mobile app with automated checks in place of paper calibration logs. Failed tools lock automatically, due dates trigger alerts, and audit records compile in one click.</div>
+          <div class="project-tags">
+            <span class="project-tag">AppSheet</span>
+            <span class="project-tag">Google Apps Script</span>
+            <span class="project-tag">ISO 9001</span>
+          </div>
+          <a href="case-studies/calibration-system.html" class="project-link">Read case study →</a>
+        </div>
+
+        <div class="project-card project-card--pro">
+          <div class="proj-company-tag coral-tag">Exact Technology Corp</div>
+          <div class="project-num">04</div>
+          <div class="project-title">Automated Regression Testing</div>
+          <div class="project-desc">Python and Selenium scripts replaced manual regression checks on engineering builds, running the same steps on every build and logging the results. Validation got about 40% faster across batches of 100+ builds.</div>
           <div class="project-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">Selenium</span>
             <span class="project-tag">Shell Scripting</span>
-            <span class="project-tag">Regression Testing</span>
           </div>
-          <a href="Sensor_Testing_Fixture_Report.pdf" target="_blank" class="project-link">View Technical Report →</a>
         </div>
 
-        <div class="project-card project-card--pro" style="cursor:default;">
-          <div class="proj-company-tag coral-tag">Exact Technology Corp</div>
-          <div class="project-num">02</div>
-          <div class="project-title">Equipment Calibration System</div>
-          <div class="project-desc">Built a calibration lifecycle tracker in Google Apps Script that automates maintenance schedules, sends real-time email alerts and digitizes compliance records, saving an estimated 3–4 hours per audit cycle.</div>
-          <div class="project-tags">
-            <span class="project-tag">Google Apps Script</span>
-            <span class="project-tag">QA Systems</span>
-            <span class="project-tag">ISO Compliance</span>
-            <span class="project-tag">Documentation</span>
-          </div>
-          <a href="ExactTech_QMS_Report.pdf" target="_blank" class="project-link">View QMS Architecture →</a>
-        </div>
-
-        <div class="project-card project-card--pro" style="cursor:default;">
+        <div class="project-card project-card--pro">
           <div class="proj-company-tag teal-tag">Crystal Fountains</div>
-          <div class="project-num">03</div>
-          <div class="project-title">RMA Process Optimization</div>
-          <div class="project-desc">Redesigned the RMA intake and testing workflow with standardized defect categories and quality gates, cutting average processing time by ~25% and improving first-pass resolution accuracy.</div>
+          <div class="project-num">05</div>
+          <div class="project-title">RMA Process Redesign</div>
+          <div class="project-desc">Rebuilt RMA intake around standard defect categories and quality gates, so every return is tested and classified the same way. Processing got about 25% faster, with more accurate first-pass diagnosis.</div>
           <div class="project-tags">
-            <span class="project-tag">PCBA Testing</span>
             <span class="project-tag">Failure Analysis</span>
-            <span class="project-tag">Process Improvement</span>
+            <span class="project-tag">PCBA Testing</span>
+            <span class="project-tag">Process Design</span>
           </div>
         </div>
 
-        <div class="project-card project-card--pro" style="cursor:default;">
+        <div class="project-card project-card--pro">
           <div class="proj-company-tag teal-tag">Crystal Fountains</div>
-          <div class="project-num">04</div>
+          <div class="project-num">06</div>
           <div class="project-title">5S Lab Transformation</div>
-          <div class="project-desc">Led a 5S lean implementation across 3 QA lab zones, reducing equipment retrieval time by ~30%, standardizing workspace layouts and establishing SOPs that improved productivity and audit readiness.</div>
+          <div class="project-desc">Reorganized 3 QA lab zones with 5S: labelled storage, standard layouts and written SOPs. Equipment retrieval time dropped by about 30%, and audits got easier.</div>
           <div class="project-tags">
             <span class="project-tag">Lean / 5S</span>
-            <span class="project-tag">SOP Development</span>
+            <span class="project-tag">SOPs</span>
             <span class="project-tag">Six Sigma</span>
           </div>
-        </div>
-
-        <div class="project-card project-card--pro" style="cursor:default;">
-          <div class="proj-company-tag coral-tag">Exact Technology Corp</div>
-          <div class="project-num">05</div>
-          <div class="project-title">AI-Powered Jira Deduplicator</div>
-          <div class="project-desc">Designed and deployed an AI agent that automatically identifies likely-duplicate defects in Jira by reasoning about root cause rather than keywords. Human-in-the-loop tool that reduces triage time and prevents duplicate work.</div>
-          <div class="project-tags">
-            <span class="project-tag">Claude API</span>
-            <span class="project-tag">Jira Automation</span>
-            <span class="project-tag">AI Agent</span>
-            <span class="project-tag">Root Cause Analysis</span>
-          </div>
-          <a href="https://github.com/gov466/jira-deduplicator" target="_blank" rel="noopener" class="project-link">View Project Details →</a>
         </div>
 
       </div>
@@ -1025,7 +1040,7 @@
           <span class="project-link">View on GitHub →</span>
         </a>
 
-        <a class="project-card" href="https://github.com/gov466/gov466.github.io/blob/master/govind%20report1(1).pdf" target="_blank" rel="noopener">
+        <a class="project-card" href="academic/hand-gesture-recognition-report.pdf" target="_blank" rel="noopener">
           <div class="project-num acad-num">02</div>
           <div class="project-title">Hand Gesture Recognition System</div>
           <div class="project-desc">Vision-based system enabling bare-hand gesture input for direct computer interaction, using image processing and PIC microcontroller-driven logic.</div>
@@ -1038,7 +1053,7 @@
           <span class="project-link">View Report →</span>
         </a>
 
-        <a class="project-card" href="https://github.com/gov466/gov466.github.io/blob/master/gstr%20based%20drivng%20ppt(1).pdf" target="_blank" rel="noopener">
+        <a class="project-card" href="academic/gesture-based-driving-slides.pdf" target="_blank" rel="noopener">
           <div class="project-num acad-num">03</div>
           <div class="project-title">Gesture-Based Driving System</div>
           <div class="project-desc">Accelerometer-based gesture-controlled driving system built with PIC16F877A, translating physical tilt and motion into vehicle control signals.</div>
@@ -1054,10 +1069,10 @@
     </div>
   </section>
 
-  <!-- PERSONAL AUTOMATION -->
+  <!-- PERSONAL PROJECTS -->
   <section id="automation">
     <div class="container">
-      <div class="section-label"><h2>Personal Automation</h2><div class="accent-line"></div></div>
+      <div class="section-label"><h2>Personal Projects</h2><div class="accent-line"></div></div>
       <div class="automation-grid">
         
         <div class="automation-card">
@@ -1197,138 +1212,7 @@
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
     })();
 
-    /* ── Visitor tracking + email alerts ───────────────────────────
-       Sends events to (a) GoatCounter dashboard and (b) your Apps
-       Script endpoint, which emails you. See SETUP.md.
-    ───────────────────────────────────────────────────────────────── */
-    (function () {
-
-      /* ▼▼ FILL THESE IN ▼▼ */
-      var NOTIFY_URL = 'https://script.google.com/macros/s/AKfycbxhIpCHwuzJAh2byEdl7WOl-s5bWM91_UoVsib1Kz-YGbUDFhTA7QpABE2L8FHVOUQo/exec';
-      var NOTIFY_KEY = 'gr-p0rt-7x2k9';
-      /* ▲▲ leave as-is to disable email alerts ▲▲ */
-
-      // Ignore obvious bots and your own visits (?me=1 once, then remembered)
-      if (/bot|crawl|spider|slurp|preview|headless/i.test(navigator.userAgent)) return;
-      if (navigator.webdriver) return;
-
-      // Storage can throw (private mode, blocked cookies); tracking must never break the page
-      function store(s, k, v) {
-        try { if (v === undefined) return s.getItem(k); s.setItem(k, v); } catch (e) { return null; }
-      }
-
-      if (location.search.indexOf('me=1') > -1) store(localStorage, 'skipTrack', '1');
-      var SKIP = store(localStorage, 'skipTrack') === '1';
-
-      // One id per browser tab session, so one visitor != ten emails
-      var sid = store(sessionStorage, 'sid');
-      if (!sid) { sid = Math.random().toString(36).slice(2, 10); store(sessionStorage, 'sid', sid); }
-
-      // Each event is sent at most once per session (refreshes and repeat clicks don't re-send)
-      var sent = {};
-      try { sent = JSON.parse(store(sessionStorage, 'sentEvents') || '{}'); } catch (e) {}
-
-      // Set once the visitor clicks a tracked link or scrolls, so bounces can be told apart
-      var interacted = false;
-
-      function context() {
-        var q = new URLSearchParams(location.search);
-        return {
-          key:    NOTIFY_KEY,
-          sid:    sid,
-          page:   location.pathname + location.search,
-          ref:    document.referrer || '(direct)',
-          src:    q.get('utm_source') || q.get('src') || '',
-          tz:     (Intl.DateTimeFormat().resolvedOptions().timeZone || ''),
-          lang:   navigator.language || '',
-          screen: screen.width + 'x' + screen.height,
-          ua:     navigator.userAgent
-        };
-      }
-
-      function track(event, label) {
-        if (SKIP) return;
-        if (sent[event]) return;
-        sent[event] = 1;
-        store(sessionStorage, 'sentEvents', JSON.stringify(sent));
-
-        // (a) GoatCounter dashboard
-        if (window.goatcounter && window.goatcounter.count && event !== 'pageview') {
-          window.goatcounter.count({ path: event, title: label, event: true });
-        }
-
-        // (b) Email alert
-        if (NOTIFY_URL.indexOf('PASTE') === 0) return;
-        var body = context();
-        body.event = event;
-        body.label = label;
-        try {
-          fetch(NOTIFY_URL, {
-            method:  'POST',
-            mode:    'no-cors',
-            keepalive: true,
-            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-            body:    JSON.stringify(body)
-          });
-        } catch (e) { /* never break the page over analytics */ }
-      }
-
-      // 1. Someone landed
-      track('pageview', 'Page opened');
-
-      // 2. Someone clicked something — label each link distinctly
-      function labelFor(a) {
-        var h = a.getAttribute('href') || '';
-        if (/resume\.pdf$/i.test(h))            return ['click-resume',   'RESUME OPENED'];
-        if (/^mailto:/i.test(h))                return ['click-email',    'Email clicked'];
-        if (/linkedin\.com/i.test(h))           return ['click-linkedin', 'LinkedIn clicked'];
-        if (/github\.com\/gov466\/?$/i.test(h)) return ['click-github',   'GitHub profile clicked'];
-        if (/github\.com\/gov466\//i.test(h)) {
-          // A specific project — name it from the card's own heading
-          var t = (a.querySelector('h3, h4, .project-title') || {}).textContent
-                  || h.split('/').pop();
-          t = decodeURIComponent(t).replace(/\.(pdf|md)$/i, '').trim().slice(0, 60);
-          return ['project:' + t, 'Project viewed: ' + t];
-        }
-        if (/^https?:/i.test(h) && h.indexOf(location.hostname) === -1) {
-          return ['outbound:' + (h.split('/')[2] || h), 'Left for ' + (h.split('/')[2] || h)];
-        }
-        return null;
-      }
-
-      document.querySelectorAll('a[href]').forEach(function (a) {
-        var l = labelFor(a);
-        if (!l) return;
-        a.addEventListener('click', function () { interacted = true; track(l[0], l[1]); });
-      });
-
-      // 3. Scroll depth tracking (25%, 50%, 75%, 90%, 100%)
-      var scrollMarkers = { 25: false, 50: false, 75: false, 90: false, 100: false };
-      window.addEventListener('scroll', function () {
-        if (SKIP) return;
-        interacted = true;
-        var pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
-        if (pct >= 25 && !scrollMarkers[25]) { scrollMarkers[25] = true; track('scroll-25', 'Scrolled 25%'); }
-        if (pct >= 50 && !scrollMarkers[50]) { scrollMarkers[50] = true; track('scroll-50', 'Scrolled 50%'); }
-        if (pct >= 75 && !scrollMarkers[75]) { scrollMarkers[75] = true; track('scroll-75', 'Scrolled 75%'); }
-        if (pct >= 90 && !scrollMarkers[90]) { scrollMarkers[90] = true; track('scroll-90', 'Scrolled 90%'); }
-        if (pct >= 100 && !scrollMarkers[100]) { scrollMarkers[100] = true; track('scroll-100', 'Scrolled to bottom'); }
-      }, { passive: true });
-
-      // 4. Time-based engagement milestones
-      setTimeout(function () { track('dwell-30s', 'Stayed 30 seconds'); }, 30000);
-      setTimeout(function () { track('dwell-60s', 'Stayed 1 minute'); }, 60000);
-      setTimeout(function () { track('dwell-2m', 'Stayed 2 minutes'); }, 120000);
-      setTimeout(function () { track('dwell-5m', 'Stayed 5 minutes'); }, 300000);
-
-      // 5. Bounce detection (left without interaction).
-      // pagehide fires reliably on mobile too, unlike beforeunload.
-      window.addEventListener('pagehide', function () {
-        if (!interacted) {
-          track('bounce', 'Left without interaction');
-        }
-      });
-    })();
   </script>
+  <script src="assets/track.js"></script>
 </body>
 </html>
