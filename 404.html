@@ -1,10 +1,78 @@
----
-layout: not_found
-title: 404
-permalink: /404.html
----
-{% include switch.html %}
-<div class="name">Brittany Chiang</div>
-<img src="{{site.baseurl}}/img/emojis/thinking-face.png" alt="">
-<h1>Hmmm...</h1>
-<h2>Looks like there's nothing here.<br>Maybe you should go back <a href="{{site.url}}">home</a>.</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Page not found | Govind Raj</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23D85A30'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23fff'>GR</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var t = 'dark';
+      try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --coral: #D85A30;
+      --bg: #FAFAF9;
+      --text-primary: #1A1A18;
+      --text-secondary: #5F5E5A;
+    }
+    [data-theme="dark"] {
+      --coral: #F0997B;
+      --bg: #111110;
+      --text-primary: #F0EFE8;
+      --text-secondary: #A8A79F;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+      text-align: center;
+    }
+    .code {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(72px, 18vw, 120px);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--coral);
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin: 1rem 0 0.5rem;
+    }
+    p { color: var(--text-secondary); margin-bottom: 1.75rem; }
+    a {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      background: var(--coral);
+      padding: 9px 20px;
+      border-radius: 24px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="code">404</div>
+    <h1>This page doesn't exist.</h1>
+    <p>The link may be broken or the page may have moved.</p>
+    <a href="/">Back to Govind Raj's portfolio</a>
+  </main>
+</body>
+</html>

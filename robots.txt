@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
-Sitemap: https://bchiang7.github.io/sitemap.xml
-........
+Allow: /
+
+Sitemap: https://gov466.github.io/sitemap.xml
